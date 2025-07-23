@@ -1,0 +1,38 @@
+h1{
+    color: blue;
+    text-align: center;
+}
+
+.low-primary{
+    color: gray;
+}
+
+.high-primary{
+    color: red;
+}
+
+.medium-primary{
+    color: orange;
+}
+form{
+    text-align: center;
+}
+
+div{
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    text-align: center;
+    border-collapse: collapse;
+    width: 50gg%;
+}
+
+
+tr{
+    text-align: center;
+}
+tbody{
+    text-align: center;
+}

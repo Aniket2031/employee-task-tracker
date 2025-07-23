@@ -1,0 +1,69 @@
+<div style="background-color: aqua;">
+<h1> Employee Task Tracker</h1>
+
+
+<form>
+    <div>
+        <input type="text" name="empName" [(ngModel)]="fields.empName">
+        <br><br>
+        <input type="text" name="taskTitle" [(ngModel)]="fields.taskTitle">
+        <br><br>
+        <select name="text" id="priority" [(ngModel)]="fields.priority">
+            <option value="Low">Low</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+        </select>  
+        <br><br> 
+        
+        <input type="text" name="date" [(ngModel)]="fields.dueDate">
+
+    </div>
+   <br>
+    <button (click)="submit()">submit</button>
+</form>
+
+<br><br>
+
+
+
+
+<table *ngIf="tasks.length>0" border="2">
+    <thead>
+        <tr>
+           <th>Employee Name</th>
+           <th>Task Title</th>
+           <th>Priority</th>
+           <th>Due Data</th>
+        </tr>
+    </thead>
+
+    <tbody *ngFor="let e of tasks">
+        <tr>
+            <td>
+              {{e.empName}}
+            </td>
+            <td>
+               {{e.taskTitle}}
+            </td>
+            <td [ngClass]="{
+
+                'low-primary':e.priority ==='Low',
+                'high-primary':e.priority==='High',
+                'medium-primary':e.priority==='Medium'
+            }">
+            {{e.priority}}
+                
+            </td>
+
+            <td>
+                {{e.dueDate}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="tasks.length==0"> No tasks assigned yet!!! </div>
+
+
+    
+</div>
